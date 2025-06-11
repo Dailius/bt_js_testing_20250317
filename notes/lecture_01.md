@@ -41,6 +41,12 @@ git clone <repo_full_path>
 git clone https://github.com/Dailius/bt_js_testing_20250317.git
 ``` 
 
+### send/receive updates
+```bash
+git push # send new commits to GitHub
+git pull # receive new commits from GitHub 
+```
+
 ### 2nd way
 1. create repo remotely (GitHub)
 2. 
