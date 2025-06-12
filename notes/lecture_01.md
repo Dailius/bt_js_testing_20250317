@@ -47,6 +47,3 @@ git push # send new commits to GitHub
 git pull # receive new commits from GitHub 
 ```
 
-### 2nd way
-1. create repo remotely (GitHub)
-2. 
