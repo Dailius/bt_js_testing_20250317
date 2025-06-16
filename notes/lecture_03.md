@@ -59,26 +59,26 @@ QA specialist - quality assurance specialist
 ***Hard skills***
 
 1. Automated Testing
-🔹 Design and implement test strategies for front-end applications (Vue.js, Next.js).
-🔹 Develop and maintain end-to-end, integration, and unit tests using modern JS testing frameworks (Cypress, Playwright, Jest, etc.).
+🔹 Design and implement test strategies for front-end applications (Vue.js, Next.js).  
+🔹 Develop and maintain end-to-end, integration, and unit tests using modern JS testing frameworks (Cypress, Playwright, Jest, etc.).  
 
-🔹 Integrate tests into CI/CD pipelines.
-🔹 Maintain QA documentation and testing best practices.
-🔹 Analyze results and provide feedback to developers.
-🔹 Participate in code reviews and quality improvement initiatives.
+🔹 Integrate tests into CI/CD pipelines.  
+🔹 Maintain QA documentation and testing best practices.  
+🔹 Analyze results and provide feedback to developers.  
+🔹 Participate in code reviews and quality improvement initiatives.  
 
-2. Manual Testing and Quality Assurance
-🔹 Perform functional and exploratory testing.
-🔹 Conduct UI/UX, regression, and cross-browser testing.
-🔹 Create and manage test plans, test cases, and bug reports.
-🔹 Log, prioritize, and track bugs (Jira, TestRail, or similar).
-🔹 Perform API testing using tools like Postman.
-🔹 Create and manage test data.
+2. Manual Testing and Quality Assurance  
+🔹 Perform functional and exploratory testing.  
+🔹 Conduct UI/UX, regression, and cross-browser testing.  
+🔹 Create and manage test plans, test cases, and bug reports.  
+🔹 Log, prioritize, and track bugs (Jira, TestRail, or similar).  
+🔹 Perform API testing using tools like Postman.  
+🔹 Create and manage test data.  
 
-3. Collaboration and Process Improvement
-Work closely with developers, product managers, and UX teams.
-🔹 Continuously improve testing processes and suggest automation opportunities.
-🔹 Contribute to QA strategy and monitor key quality metrics.
+3. Collaboration and Process Improvement  
+Work closely with developers, product managers, and UX teams.  
+🔹 Continuously improve testing processes and suggest automation opportunities.  
+🔹 Contribute to QA strategy and monitor key quality metrics.  
 
 ## 3. Learning and AI
 
