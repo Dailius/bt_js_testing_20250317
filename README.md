@@ -15,5 +15,16 @@ end -
 5. Git branching
 
 
+## Week 02
+### [Lecture 02](/notes/lecture_02.md)
+[text](notes/lecture_01.md)
+1. Repeat
+2. Requirements for QA specialist
+3. Learning and AI
+4. QA Roadmap
+5. Testing types
+
+
+
 <!-- ## Week 02 -->
 
