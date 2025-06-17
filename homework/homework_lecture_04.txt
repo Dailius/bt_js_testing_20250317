@@ -1,0 +1,25 @@
+Please cover the functionality of https://todolist.james.am/ with test cases.
+
+1. Create TestCases.md file
+2. Identify the functionalities (TS) of https://todolist.james.am/
+3. Write up Test cases to cover all functionality.
+
+
+TS 1. Create ToDo
+TS 2. Edit ToDo
+TS 3. Delete ToDo
+....
+
+TC 1.1. Positive create ToDo
+Steps:
+1. Open app page: https://todolist.james.am/
+2. Input todo name: asdfasdffa
+3. Press key [Enter]
+4. Observe result
+
+Expected result: 
+Actual result: 
+
+Status: PASS
+
+Comments: 
