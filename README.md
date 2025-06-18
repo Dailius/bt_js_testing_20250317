@@ -26,6 +26,10 @@ end -
 1. Repeat and check homework
 2. Test Scenarios (TS) and Test Cases (TC)
 
+### [Lecture 05](/notes/lecture_05.md)
+1. Repeat and check homework
+2. TC requirements
+
 
 <!-- ## Week 02 -->
 

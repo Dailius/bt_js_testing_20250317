@@ -1,0 +1,9 @@
+Please cover the functionality of https://todolist.james.am/ with test cases.
+
+1. choose some TC form as given links below:
+2. modify selected form as you like and fill in this with all TS and TC.
+
+
+https://www.guru99.com/download-sample-test-case-template-with-explanation-of-important-fields.html  
+https://www.smartsheet.com/test-case-templates-examples   
+https://templatelab.com/test-case/#google_vignette    
