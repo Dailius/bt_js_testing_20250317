@@ -30,6 +30,12 @@ end -
 1. Repeat and check homework
 2. TC requirements
 
+### [Lecture 06](/notes/lecture_06.md)
+1. Repeat and check homework
+2. Testing levels 
+3. FE/BE
+4. Boxing
+5. Software dev. methodologies: Waterfall, Agile
 
 <!-- ## Week 02 -->
 
