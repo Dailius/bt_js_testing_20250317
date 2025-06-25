@@ -1,0 +1,8 @@
+You have an application on https://coffee-cart.app/
+Please perform exploratory testing and find the functionalities of the system.
+Identify the scenarios of the application.
+
+Please try writing the test cases for https://coffee-cart.app/ by using new Test Management system
+https://app.testomat.io/
+
+You will need to register a new account on this.

@@ -37,5 +37,11 @@ end -
 4. Boxing
 5. Software dev. methodologies: Waterfall, Agile
 
-<!-- ## Week 02 -->
+<!-- ## Week 03 -->
+### [Lecture 07](/notes/lecture_07.md)
+1. Repeat and check homework
+2. Regression, Smoke, Exploratory, Ad-hoc testing
+3. TC management systems (Testomat)
+
+<!-- ## Week 04 -->
 

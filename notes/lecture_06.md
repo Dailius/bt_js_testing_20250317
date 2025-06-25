@@ -72,4 +72,3 @@ https://en.wikipedia.org/wiki/Agile_software_development
 
 ![](/pictures/scrum_image.png) 
 
-
