@@ -49,6 +49,14 @@ end -
 3. Checklist
 4. Smoke testing
 
+### [Lecture 09](/notes/lecture_09.md)
+1. Repeat and check homework
+2. Create Smoke test for mobile app.
+3. Defects and severities
+
 
 <!-- ## Week 04 -->
 
+<!-- 1. Bug lifecycle
+2. Bug registration
+3. Jira -->
