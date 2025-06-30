@@ -1,0 +1,4 @@
+You have an application on https://coffee-cart.app/
+Also you have written all TS, TC.
+Some of TC has Failure status. Therefore require to register this bugs into Jira.
+Pleas register at least 2 bugs into Jira. 

@@ -57,6 +57,12 @@ end -
 
 <!-- ## Week 04 -->
 
-<!-- 1. Bug lifecycle
-2. Bug registration
-3. Jira -->
+### [Lecture 10](/notes/lecture_10.md)
+1. Repeat and check homework
+2. Bug lifecycle
+3. Bug registration
+4. Jira
+
+
+<!-- ## Week 05 -->
+
