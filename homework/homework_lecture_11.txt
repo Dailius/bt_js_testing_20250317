@@ -1,0 +1,1 @@
+Register 5 defects from https://academybugs.com/find-bugs/
