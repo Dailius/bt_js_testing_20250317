@@ -69,5 +69,15 @@ end -
 3. Pesticide paradox
 4. Exercise to register bugs into Jira
    
+### [Lecture 12](/notes/lecture_12.md)
+1. Repeat and check homework
+2. FE vs BE
+3. System integrations
+4. REST API
+5. Postman
+
+<!-- ### [Lecture 13](/notes/lecture_13.md)
+rest api analogy -->
+
 <!-- ## Week 05 -->
 
