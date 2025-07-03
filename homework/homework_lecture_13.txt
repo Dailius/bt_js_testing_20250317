@@ -1,0 +1,6 @@
+https://jsonplaceholder.typicode.com/
+
+Your homework would be to implement the same collection, but for a different resource:
+/posts
+
+

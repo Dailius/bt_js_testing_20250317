@@ -76,8 +76,11 @@ end -
 4. REST API
 5. Postman
 
-<!-- ### [Lecture 13](/notes/lecture_13.md)
-rest api analogy -->
+### [Lecture 13](/notes/lecture_13.md)
+1. rest api analogy
+2. API documentation
+3. Request queries
 
 <!-- ## Week 05 -->
-
+<!-- 1. Request queries -->
+<!-- breaking change -->
