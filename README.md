@@ -82,5 +82,19 @@ end -
 3. Request queries
 
 <!-- ## Week 05 -->
-<!-- 1. Request queries -->
-<!-- breaking change -->
+### [Lecture 14](/notes/lecture_14.md)
+1. Repeat and check homework
+2. Postman collection variables 
+3. Request queries
+4. API Key
+5. API queries
+
+
+
+<!-- ### [Lecture 15](/notes/lecture_15.md)
+6. API token
+7. Breaking change -->
+
+
+<!-- ## Week 06 -->
+

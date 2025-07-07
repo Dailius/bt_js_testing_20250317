@@ -1,0 +1,16 @@
+You have api documentation in 
+https://restful-booker.herokuapp.com/apidoc/index.html
+
+Observe the documentation and perform the following requests in Postman.
+1. Authenticate to Api.
+2. Create 4 bookings
+3. Apply filtering to the bookings.
+4. Update a booking.
+5. Delete a booking.
+6. Get information of specific booking.
+
+How it should look like.
+You should create a new Postman collection for this
+and the collection should have a request for each of these actions.
+
+
