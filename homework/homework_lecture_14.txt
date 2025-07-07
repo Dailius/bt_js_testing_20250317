@@ -13,4 +13,3 @@ How it should look like.
 You should create a new Postman collection for this
 and the collection should have a request for each of these actions.
 
-
