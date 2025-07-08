@@ -89,12 +89,14 @@ end -
 4. API Key
 5. API queries
 
+### [Lecture 15](/notes/lecture_15.md)
+1. Repeat and check homework
+2. API token
+3. Postman scripts
 
-
-<!-- ### [Lecture 15](/notes/lecture_15.md)
-6. API token
-7. Breaking change -->
-
+<!-- ### [Lecture 16](/notes/lecture_16.md)
+1. Repeat and check homework
+2. Breaking change -->
 
 <!-- ## Week 06 -->
 

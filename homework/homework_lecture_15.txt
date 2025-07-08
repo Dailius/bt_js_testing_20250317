@@ -1,0 +1,9 @@
+You have api documentation in 
+https://restful-booker.herokuapp.com/apidoc/index.html
+
+Use newly created collection variables for Postman requests/responses based on previous homework.
+Ex:
+    bookingid,
+    filtering data by firstName, lastName, checkout and check-in dates.
+    
+
