@@ -1,0 +1,9 @@
+You have api documentation in 
+https://restful-booker.herokuapp.com/apidoc/index.html
+
+Write tests scripts:
+1. response code
+2. response time
+3. response body with types and values (if possible)
+4. user requests for PUT and DELETE
+

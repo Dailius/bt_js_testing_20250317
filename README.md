@@ -94,9 +94,10 @@ end -
 2. API token
 3. Postman scripts
 
-<!-- ### [Lecture 16](/notes/lecture_16.md)
+### [Lecture 16](/notes/lecture_16.md)
 1. Repeat and check homework
-2. Breaking change -->
+2. Breaking change
+3. Postman scripts
 
 <!-- ## Week 06 -->
 
