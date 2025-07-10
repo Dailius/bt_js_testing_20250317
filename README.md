@@ -99,5 +99,9 @@ end -
 2. Breaking change
 3. Postman scripts
 
+### [Lecture 17](/notes/lecture_17.md)
+1. Repeat and check homework
+2. Postman scripts
+
 <!-- ## Week 06 -->
 

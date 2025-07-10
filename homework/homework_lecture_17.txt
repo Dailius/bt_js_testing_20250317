@@ -1,0 +1,6 @@
+You have api documentation in 
+https://restful-booker.herokuapp.com/apidoc/index.html
+
+Write request and tests scripts:
+1. Cover all request with negative tests (negative request)
+2. Also complete tests with GET all and GET details requests
