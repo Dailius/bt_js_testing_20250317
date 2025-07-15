@@ -1,0 +1,11 @@
+You have api documentation and written Postman tests for restful-booker.
+https://restful-booker.herokuapp.com/apidoc/index.html
+
+Create new project and full fill following steps:
+1. Initiate new Node project
+2. Export Postman json file into this project
+3. Initiate git
+4. Create script in order to run test with newman
+5. Create commits as per above mentioned steps
+6. Push this project in to GitHub
+7. Implement GitHub actions

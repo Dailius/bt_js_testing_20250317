@@ -1,0 +1,13 @@
+{
+  "name": "bt-20250317_api-jsonplaceholder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run postmanJsonPlaceHolder.json -e jsonPlaceHolder-env.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

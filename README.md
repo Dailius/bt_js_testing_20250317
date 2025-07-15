@@ -37,7 +37,7 @@ end -
 4. Boxing
 5. Software dev. methodologies: Waterfall, Agile
 
-<!-- ## Week 03 -->
+## Week 03
 ### [Lecture 07](/notes/lecture_07.md)
 1. Repeat and check homework
 2. Regression, Smoke, Exploratory, Ad-hoc testing
@@ -55,8 +55,7 @@ end -
 3. Defects and severities
 
 
-<!-- ## Week 04 -->
-
+## Week 04
 ### [Lecture 10](/notes/lecture_10.md)
 1. Repeat and check homework
 2. Bug lifecycle
@@ -81,7 +80,7 @@ end -
 2. API documentation
 3. Request queries
 
-<!-- ## Week 05 -->
+## Week 05
 ### [Lecture 14](/notes/lecture_14.md)
 1. Repeat and check homework
 2. Postman collection variables 
@@ -103,5 +102,17 @@ end -
 1. Repeat and check homework
 2. Postman scripts
 
-<!-- ## Week 06 -->
+## Week 06
+### [Lecture 18]()
+1. Repeat and check homework
+
+### [Lecture 19](/notes/lecture_19.md)
+1. Repeat and check homework
+2. Test isolation
+3. Newman tool
+4. GitHub Actions run Newman
+5. Newman reports
+
+
+<!-- ## Week 07 -->
 
