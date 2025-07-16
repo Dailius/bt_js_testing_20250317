@@ -1,0 +1,15 @@
+We have local api runs in http://localhost:3011
+
+1. create GET request 
+    1.1. endpoint /users
+    1.2. response body text contains 'List of users'
+
+2. create GET request 
+    2.1. endpoint /users/1
+    2.2. response body text contains 'User details by id:1'
+
+3. create POST request 
+    3.1. endpoint /users
+    3.2. response body text contains 'New user created'
+
+4. create all requests in Postman with test scripts for status code and text message.

@@ -113,6 +113,9 @@ end -
 4. GitHub Actions run Newman
 5. Newman reports
 
+### [Lecture 20](/notes/lecture_20.md)
+1. Repeat and check homework
+2. Node express User Auth project 
 
 <!-- ## Week 07 -->
 
