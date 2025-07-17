@@ -1,0 +1,20 @@
+We have local api runs in http://localhost:3011
+
+1. Complete API code with POST new user:
+    // validation: all request body properties ar mandatory
+    // response on error:
+    // 400, "Request properties 'userName', 'email' and 'password' are mandatory."
+
+    // validation userName: 
+    // userName is unique, doNotContains space
+
+    // validation email: 
+    // email is unique, appropriate email format 
+
+    // validation password: 
+    // length 8, contains Aa, 0-9, special char.
+
+2. Create API for PUT request that contains validation and updates user details.
+3. Create API for DELETE request that contains validation removes user from database.
+4. Write all positive, negative requests with Postman including test scripts with appropriate structure. 
+
