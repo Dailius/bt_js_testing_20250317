@@ -121,10 +121,21 @@ end -
 1. Repeat and check homework
 2. Node express User Auth project 
 
+
 ## Week 07
 ### [Lecture 22](/notes/lecture_22.md)
 1. Repeat and check homework
 2. Postgres installation
+
+### [Lecture 23](/notes/lecture_23.md)
+1. Repeat and check homework
+2. Libs Concurrently, wait-on
+
+### [Lecture 24](/notes/lecture_24.md)
+1. Repeat and check homework
+2. Libs start-server-and-test
+3. Postgres SQL
+
 
 <!-- ## Week 08 -->
 

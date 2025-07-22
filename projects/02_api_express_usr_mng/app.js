@@ -5,7 +5,7 @@ const app = express();
 
 const usersArray = [
     { id: 1, userName: 'tree', email: "user01@demo.com", password: 'abc123' },
-    { id: 2, userName: 'people', email: "user02@demo.com", password: 'cba123' },
+    { id: 2, userName: 'Vardas2', email: "user02@demo.com", password: 'cba123' },
     { id: 3, userName: 'tent', email: "user03@demo.com", password: 'dsg123' },
     { id: 4, userName: 'forest', email: "user04@demo.com", password: 'abc123jxjx' },
 ];
@@ -70,8 +70,8 @@ app.post('/users', (req, res) => {
         password: password,
     };
 
-    userIndexByName = dataBase.users.findIndex(user => user.userName === updatedUser.userName)
-    userIndexByEmail = dataBase.users.findIndex(user => user.email === updatedUser.email)
+    userIndexByName = dataBase.users.findIndex(user => user.userName === newUser.userName)
+    userIndexByEmail = dataBase.users.findIndex(user => user.email === newUser.email)
 
     // Validation userNme;
     //username is unique, doNotContain space,
@@ -223,9 +223,6 @@ app.put('/users/:id', (req, res) => {
 app.delete('/users/:reqId', (req, res) => {
     const { reqId } = req.params;
     const id = parseInt(reqId);
-
-    console.log(id);
-    console.log(reqId);
     
     userIndex = dataBase.users.findIndex(user => user.id === id)
 
@@ -249,5 +246,4 @@ app.delete('/users/:reqId', (req, res) => {
 //localhost-->127.0.0.1
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-
 });

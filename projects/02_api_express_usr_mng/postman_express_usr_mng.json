@@ -1,0 +1,1594 @@
+{
+	"info": {
+		"_postman_id": "48007055-f20c-4faf-a19e-183787b2ca74",
+		"name": "express_usr_mng_by_Aurelija",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15497739",
+		"_collection_link": "https://bt-js-test20241218.postman.co/workspace/demo_20250317~114990d9-5ec6-4580-9d1c-675da5cfb1bf/collection/15497739-48007055-f20c-4faf-a19e-183787b2ca74?action=share&source=collection_link&creator=15497739"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"item": [
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "Create_new_user_without_name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_without_email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"\",\r\n\"password\": \"slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_without_password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_with_existing_name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'User name already exist'\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"User name is taken allready\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas2\",\r\n\"email\": \"user4936@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_name_with_spaces",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'User name must be without spaces'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"User name must be without spaces\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"  Vardas 1  \",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_email_without_@",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user4gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_email_without_dot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user456329852@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_password_with_less_than_8_symbols",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Sl12*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_password_without_capital_letter",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_password_without_numbers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create_new_user_password_without_special_char",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create_new_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\r",
+									"    \"newUserDetails\",\r",
+									"    JSON.stringify(pm.response.json())\r",
+									");\r",
+									"\r",
+									"function saveToColectionVariables() {\r",
+									"   pm.collectionVariables.set(\"newUserId\", pm.response.json().user.id);\r",
+									"    pm.collectionVariables.set(\"newUserName\", JSON.parse(pm.request.body.raw).userName);\r",
+									"    pm.collectionVariables.set(\"newUserEmail\", JSON.parse(pm.request.body.raw).email);\r",
+									"    pm.collectionVariables.set(\"newUserPassword\", JSON.parse(pm.request.body.raw).password);\r",
+									"}\r",
+									"\r",
+									"saveToColectionVariables();\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 600ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User details are correct\", function() {\r",
+									"   //pm.expect(pm.response.json().id).to.eql(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.json().user.userName).a('string').eql(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.json().user.email).to.be.a('string').and.to.eql(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.json().user.password).to.eql(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body message'User details'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/{{newUserId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{newUserId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update user",
+			"item": [
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "Update_user_without_name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_without_email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"\",\r\n\"password\": \"slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_without_password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_with_existing_name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'User name already exist'\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"User name is taken allready\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"Vardas2\",\r\n\"email\": \"user294@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_name_with_spaces",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'User name must be without spaces'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"User name must be without spaces\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"  Vardas 1  \",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_email_without_@",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user4566hjkkjgmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_email_without_dot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user425636asedew@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_password_with_less_than_8_symbols",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Sl12*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_password_without_capital_letter",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_password_without_numbers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_user_password_without_special_char",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/{{newUserId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{newUserId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"function saveToColectionVariables() {\r",
+									"    pm.collectionVariables.set(\"newUserName\", JSON.parse(pm.request.body.raw).userName);\r",
+									"    pm.collectionVariables.set(\"newUserEmail\", JSON.parse(pm.request.body.raw).email);\r",
+									"    pm.collectionVariables.set(\"newUserPassword\", JSON.parse(pm.request.body.raw).password);\r",
+									"}\r",
+									"\r",
+									"saveToColectionVariables();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 600ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking details are correct\", function() {\r",
+									"    pm.expect(pm.response.json().user.id).to.eql(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.json().user.userName).a('string').eql(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.json().user.email).to.be.a('string').and.to.eql(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.json().user.password).to.eql(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis155**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/{{newUserId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{newUserId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body message'User details'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/{{newUserId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{newUserId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete user",
+			"item": [
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "Delete_no_existing_user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 600ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains text 'User not found'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"User not found\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/11255",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"11255"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello_world",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body message'Hello World!'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hello My World!\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All_users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body message'User details'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserId\"));\r",
+							"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserName\"));\r",
+							"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserEmail\"));\r",
+							"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserPassword\"));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body message'User details'\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.id).to.equal(pm.collectionVariables.get(\"newUserId\"));\r",
+							"    pm.expect(responseJson.userName).to.equal(pm.collectionVariables.get(\"newUserName\"));\r",
+							"    pm.expect(responseJson.email).to.equal(pm.collectionVariables.get(\"newUserEmail\"));\r",
+							"    pm.expect(responseJson.password).to.equal(pm.collectionVariables.get(\"newUserPassword\"));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/{{newUserId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"{{newUserId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3011",
+			"type": "string"
+		},
+		{
+			"key": "newUserId",
+			"value": ""
+		},
+		{
+			"key": "newUserName",
+			"value": ""
+		},
+		{
+			"key": "newUserEmail",
+			"value": ""
+		},
+		{
+			"key": "newUserPassword",
+			"value": ""
+		},
+		{
+			"key": "newUserDetails",
+			"value": ""
+		}
+	]
+}
