@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node --watch .",
     "api": "newman run postman_express_usr_mng.json",
-    "test:api": "concurrently -k \"npm run dev\" \"wait-on http://localhost:3011/ && npm run api\""
+    "test:api": "concurrently -k \"npm run dev\" \"wait-on http://localhost:3011/ && npm run api\"",
+    "tst:api":"start-server-and-test dev http://localhost:3011/users api"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "dependencies": {
     "concurrently": "^9.2.0",
     "express": "^5.1.0",
+    "start-server-and-test": "^2.0.12",
     "wait-on": "^8.0.3"
   }
 }

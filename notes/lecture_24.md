@@ -1,6 +1,31 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+1. Repeat and check homework
+2. Libs start-server-and-test
+3. Postgres SQL
 
+
+## 1. Repeat and check homework
+
+
+## 2. Libs start-server-and-test
+
+https://www.npmjs.com/package/start-server-and-test
+
+```bash
+npm i start-server-and-test
+```
+
+```json
+{
+    "scripts": {
+        ...
+        "tst:api":"start-server-and-test dev http://localhost:3011/users api"
+    }
+}
+
+```
+
+GitHub action yaml file:
+```yml
 name: Postman CI
 
 on:
@@ -57,3 +82,28 @@ jobs:
 # 4th solution
     - name: Start API server and tests
       run:  npm run tst:api
+```
+
+## 3. Postgres SQL
+
+https://neon.com/postgresqltutorial/dvdrental.zip   
+https://neon.com/postgresqltutorial/printable-postgresql-sample-database-diagram.pdf  
+
+SQL tables:
+1. table name
+2. column with names (static)
+3. rows as data entry (dynamic)
+4. values - tulep
+
+PK -> primary key -> pirminis raktas (Unique)
+FK -> foreign key -> antrinis raktas (it might duplicate)
+
+ADDRESS
+(PK) address_id
+(FK) city_id (Duplicates)
+
+CITY:
+(PK) city_id (Unique)
+(FK) country_id
+
+
