@@ -136,6 +136,10 @@ end -
 2. Libs start-server-and-test
 3. Postgres SQL
 
+### [Lecture 25](/notes/lecture_25.md)
+1. Postgres SQL
+
+
 
 <!-- ## Week 08 -->
 
