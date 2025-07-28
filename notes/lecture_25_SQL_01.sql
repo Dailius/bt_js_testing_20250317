@@ -118,37 +118,35 @@ SELECT city FROM city WHERE city LIKE '%e__';
 
 /*
 	Agrtegation functions:
-	count(), sum(), avg(), min(), max()
 */
 
-SELECT * FROM payment; 
-SELECT count(payment_id) FROM payment; 
-SELECT count(*) FROM payment; 
-
-SELECT count(*), sum(amount), avg(amount), min(amount), max(amount) FROM payment WHERE customer_id = 341; 
-
-SELECT max(payment_id), max(payment_id) + 1  FROM payment;
-SELECT customer_id + staff_id, customer_id / staff_id, customer_id * staff_id  FROM payment;
-
+SELECT * FROM payment;
+SELECT COUNT(payment_id) FROM payment;
+SELECT COUNT(*) FROM payment;
+ 
+SELECT COUNT(*), SUM(amount), AVG(amount), MIN(amount), MAX(amount) FROM payment WHERE customer_id = 341;
+ 
+SELECT MAX(payment_id), MAX(payment_id) + 1 FROM payment;
+SELECT customer_id + staff_id, customer_id / staff_id, customer_id * staff_id FROM payment;
+ 
 /*
 	GROUP BY
 	HAVING
 */
-
-	SELECT customer_id, count(*) FROM payment GROUP BY customer_id; 
-	SELECT customer_id, count(*) FROM payment GROUP BY customer_id ORDER BY count DESC; 
-	SELECT customer_id, count(*) FROM payment GROUP BY customer_id ORDER BY 2 DESC; 
-	
-	SELECT customer_id, amount, count(*), sum(amount), min(amount), max(amount) 
-	FROM payment 
-	WHERE customer_id IN(148, 562, 144) 
-	GROUP BY customer_id, amount 
-	ORDER BY 1 ASC, 2 DESC; 
-
-	SELECT customer_id, amount, count(*), sum(amount), min(amount), max(amount) 
-	FROM payment 
-	WHERE customer_id IN(148, 562, 144) 
-	GROUP BY customer_id, amount 
-	HAVING count(*) > 1 AND  sum(amount) BETWEEN 20 AND 30
-	ORDER BY 1 ASC, 2 DESC; 
+ 
+SELECT customer_id, COUNT(*) FROM payment GROUP BY customer_id ORDER BY count DESC;
+SELECT customer_id, COUNT(*) FROM payment GROUP BY customer_id ORDER BY 2 DESC;
+ 
+SELECT customer_id, amount, COUNT(*), SUM(amount), MIN(amount), MAX(amount)
+FROM payment
+WHERE customer_id IN (148, 526, 144)
+GROUP BY customer_id, amount
+ORDER BY 1 ASC, 2 DESC;
+ 
+SELECT customer_id, amount, COUNT(*), SUM(amount), MIN(amount), MAX(amount)
+FROM payment
+WHERE customer_id IN (148, 526, 144)
+GROUP BY customer_id, amount
+HAVING COUNT(*) > 1 AND SUM(amount) BETWEEN 20 AND 30
+ORDER BY 1 ASC, 2 DESC;
 

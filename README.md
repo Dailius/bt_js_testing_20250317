@@ -136,10 +136,15 @@ end -
 2. Libs start-server-and-test
 3. Postgres SQL
 
-### [Lecture 25](/notes/lecture_25.md)
+### [Lecture 25](/notes/lecture_25_SQL_01.sql)
 1. Postgres SQL
 
 
+## Week 08
+### [Lecture 26](/notes/lecture_26_SQL_02.sql)
+1. Postgres SQL array
+2. Joins
 
-<!-- ## Week 08 -->
+
+<!-- ## Week 09 -->
 
