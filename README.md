@@ -145,6 +145,11 @@ end -
 1. Postgres SQL array
 2. Joins
 
+### [Lecture 27](/notes/lecture_27_SQL_03.sql)
+1. LEFT/RIGHT JOINS
+2. Subqueries
+3. Create, Update, Delete tables 
+
 
 <!-- ## Week 09 -->
 
