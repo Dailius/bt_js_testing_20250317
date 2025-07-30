@@ -150,6 +150,21 @@ end -
 2. Subqueries
 3. Create, Update, Delete tables 
 
+### [Lecture 28](/notes/lecture_28.md)
+1. Repeat and check homework
+2. `dotenv` lib
+3. `pg` lib
+4. injection attacks
+5. JWT (`bcryptjs`, `jsonwebtoken` libs)
+6. API vs. JWT
+7. Attacks
 
+### [Lecture 29](/notes/lecture_29.md)
+1. `pg` lib
+2. injection attacks
+3. JWT (`bcryptjs`, `jsonwebtoken` libs)
+4. API vs. JWT
+5. Attacks
+   
 <!-- ## Week 09 -->
 
