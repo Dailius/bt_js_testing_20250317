@@ -1,8 +1,8 @@
 const express = require("express");
 const envr = require("./config/env.js");
-// const pool = require("./config/db");
-// const initialize_db = require("./utils/dbinit");
-// const { hashPassword, comparePassword } = require("./utils/hash");
+const pool = require("./config/db");
+const initialize_db = require("./utils/dbinit");
+const { hashPassword, comparePassword } = require("./utils/hash");
 // const { generateToken } = require("./utils/jwt");
 // const { authenticate } = require("./utils/auth");
 
@@ -26,86 +26,75 @@ const environment_data = (req, res) => {
 // http://localhost:3011/v1/env
 app.get("/v1/env", environment_data);
 
-// // const findUserByUsername = (username) => db.users.find(it => it.username === username);
-// // const findUserByEmail = (email) => db.users.find(it => it.email === email);
-// const validateUsernameLength = (username) => username.length < 3 || username.length > 35;
-// const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-// const validatePassword = (password) => password.length >= 8 && password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9]+$/);
-// const setUpError = (message, code) => {
-//     const error = new Error(message);
-//     error.statusCode = code
-//     return error
-// }
+// const findUserByUsername = (username) => db.users.find(it => it.username === username);
+// const findUserByEmail = (email) => db.users.find(it => it.email === email);
+const validateUsernameLength = (username) => username.length < 3 || username.length > 35;
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+const validatePassword = (password) => password.length >= 8 && password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9]+$/);
+const setUpError = (message, code) => {
+    const error = new Error(message);
+    error.statusCode = code
+    return error
+}
 
-// initialize_db();
+initialize_db();
 
-// // http://localhost:3011/v1/users
-// app.post("/v1/users", async (req, res) => {
-//     const { username, email, password } = req.body;
+// http://localhost:3011/v1/users
+app.post("/v1/users", async (req, res) => {
+    const { username, email, password } = req.body;
 
-//     try {
-//         if (!username || !email || !password) {
-//             return res.status(400).json({ message: "username, email, password fields are mandatory." });
-//         }
+    try {
+        if (!username || !email || !password) {
+            return res.status(400).json({ message: "username, email, password fields are mandatory." });
+        }
 
-//         const user = {
-//             username: username.trim(),
-//             email,
-//             password
-//         };
+        const user = {
+            username: username.trim(),
+            email,
+            password
+        };
 
-//         // username validation: unique
-//         // if (findUserByUsername(user.username)) {
-//         //     return res.status(409).json({ message: "Username already exist" });
-//         // };
+        // username validation: min 3, max 35
+        if (validateUsernameLength(user.username)) {
+            return res.status(400).json({ message: "Username length min 3 and max 35" });
+        }
 
-//         // username validation: min 3, max 35
-//         if (validateUsernameLength(user.username)) {
-//             return res.status(400).json({ message: "Username length min 3 and max 35" });
-//         }
+        // email validation: keep email format
+        if (!validateEmail(user.email)) {
+            return res.status(400).json({ message: "Invalid email format" });
+        }
 
-//         // email validation: unique
-//         // if (findUserByEmail(user.email)) {
-//         //     return res.status(409).json({ message: "Email already exist" });
-//         // }
+        // password validation: length 8 and more, only letters and numbers
+        if (!validatePassword(user.password)) {
+            return res.status(400).json({ message: "Invalid password" });
+        }
 
-//         // email validation: keep email format
-//         // if (!user.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-//         if (!validateEmail(user.email)) {
-//             return res.status(400).json({ message: "Invalid email format" });
-//         }
+        // require to hash password
+        const hashedPassword = await hashPassword(user.password);
 
-//         // password validation: length 8 and more, only letters and numbers
-//         if (!validatePassword(user.password)) {
-//             return res.status(400).json({ message: "Invalid password" });
-//         }
+        const result = await pool.query(
+            `
+            INSERT INTO users(user_name, email, password)
+            VALUES ($1, $2, $3)
+            RETURNING *;
+            `,
+            [user.username, user.email, hashedPassword]
+        );
 
-//         // require to hash password
-//         const hashedPassword = await hashPassword(user.password);
-
-//         const result = await pool.query(
-//             `
-//             INSERT INTO users(user_name, email, password)
-//             VALUES ($1, $2, $3)
-//             RETURNING *;
-//             `,
-//             [user.username, user.email, hashedPassword]
-//         );
-
-//         res.status(201).json({
-//             message: "User created successfully",
-//             user: {
-//                 id: result.rows[0].user_id,
-//                 name: result.rows[0].user_name,
-//                 email: result.rows[0].email,
-//                 created_at: result.rows[0].created_at,
-//                 updated_at: result.rows[0].updated_at
-//             }
-//         });
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
+        res.status(201).json({
+            message: "User created successfully",
+            user: {
+                id: result.rows[0].user_id,
+                name: result.rows[0].user_name,
+                email: result.rows[0].email,
+                created_at: result.rows[0].created_at,
+                updated_at: result.rows[0].updated_at
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // app.post("/v1/login", async (req, res) => {
 //     const { username, password } = req.body;

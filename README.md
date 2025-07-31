@@ -167,4 +167,8 @@ end -
 5. Attacks
    
 <!-- ## Week 09 -->
+<!-- ### [Lecture 30](/notes/lecture_30.md)
+1. Repeat and check homework
+2. JWT (`bcryptjs`, `jsonwebtoken` libs)
+3. API vs. JWT -->
 

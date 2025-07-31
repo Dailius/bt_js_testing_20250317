@@ -1,0 +1,4 @@
+We have local api express_usr_mng runs in http://localhost:3011
+
+Create all possible positive and negative tests for "Create new user" functionality.
+Use Postman
