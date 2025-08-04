@@ -3,8 +3,8 @@ const envr = require("./config/env.js");
 const pool = require("./config/db");
 const initialize_db = require("./utils/dbinit");
 const { hashPassword, comparePassword } = require("./utils/hash");
-// const { generateToken } = require("./utils/jwt");
-// const { authenticate } = require("./utils/auth");
+const { generateToken } = require("./utils/jwt");
+const { authenticate } = require("./utils/auth");
 
 const port = 3011;
 const app = express();
@@ -96,86 +96,87 @@ app.post("/v1/users", async (req, res) => {
     }
 });
 
-// app.post("/v1/login", async (req, res) => {
-//     const { username, password } = req.body;
+app.post("/v1/login", async (req, res) => {
+    const { username, password } = req.body;
 
-//     try {
-//         const result = await pool.query(
-//             `
-//         SELECT user_id, user_name, password 
-//         FROM users
-//         WHERE user_name = $1
-//         `,
-//             [username]
-//         );
+    try {
+        const result = await pool.query(
+            `
+        SELECT user_id, user_name, password 
+        FROM users
+        WHERE user_name = $1
+        `,
+            [username]
+        );
 
-//         const user = result.rows[0];
+        const user = result.rows[0];
 
-//         if (result.rows.length === 0 || !user.password) {
-//             const error = new Error("User not found");
-//             error.statusCode = 404;
-//             throw error
-//         }
+        if (result.rows.length === 0 || !user.password) {
+            const error = new Error("User not found");
+            error.statusCode = 404;
+            throw error
+        }
 
-//         const isCorrectPassword = await comparePassword(password, user.password)
+        const isCorrectPassword = await comparePassword(password, user.password)
 
-//         if (!isCorrectPassword) {
-//             throw setUpError("Invalid user name or password", 404);
-//         }
+        if (!isCorrectPassword) {
+            throw setUpError("Invalid user name or password", 404);
+        }
 
-//         res.status(200).json({
-//             message: "Successful login",
-//             id: user.user_id,
-//             username: user.user_name,
-//             token: generateToken({ id: user.user_id, username: user.user_name })
-//         });
+        res.status(200).json({
+            message: "Successful login",
+            id: user.user_id,
+            username: user.user_name,
+            token: generateToken({ id: user.user_id, username: user.user_name })
+        });
 
-//     } catch (error) {
-//         res.status(error.statusCode || 500).json({
-//             error: error.message || "Internal server error"
-//         });
-//     }
-// });
+    } catch (error) {
+        res.status(error.statusCode || 500).json({
+            error: error.message || "Internal server error"
+        });
+    }
+});
 
-// app.get("/v1/users", (req, res) => {
-//     res.status(200).json(db.users);
-// });
+app.get("/v1/users", async (req, res) => {
+    const result = await pool.query("SELECT * FROM users;");
+    res.status(200).json(result.rows);
+});
 
-// // app.get("/v1/users/:id", authenticate, async (req, res) => {
-// app.get("/v1/user/details", authenticate, async (req, res) => {
-//     // const { id } = req.params;
-//     const identifiedUser= req.user;
+// app.get("/v1/users/:id", authenticate, async (req, res) => {
+app.get("/v1/users/details", authenticate, async (req, res) => {
+    // const { id } = req.params;
+    const identifiedUser= req.user;
 
-//     try {
-//         const result = await pool.query(
-//             `
-//         SELECT * 
-//         FROM users
-//         WHERE user_id = $1
-//         `,
-//             // [id]
-//             [identifiedUser.id]
-//         );
+    try {
+        const result = await pool.query(
+            `
+        SELECT * 
+        FROM users
+        WHERE user_id = $1
+        `,
+            // [id]
+            [identifiedUser.id]
+        );
 
-//         if (result.rows.length === 0) {
-//             throw setUpError("User not found", 404)
-//         }
+        if (result.rows.length === 0) {
+            throw setUpError("User not found", 404)
+        }
 
-//         res.status(200).json({
-//             id: result.rows[0].user_id,
-//             name: result.rows[0].user_name,
-//             email: result.rows[0].email,
-//             created_at: result.rows[0].created_at,
-//             updated_at: result.rows[0].updated_at
-//         });
+        res.status(200).json({
+            id: result.rows[0].user_id,
+            name: result.rows[0].user_name,
+            email: result.rows[0].email,
+            created_at: result.rows[0].created_at,
+            updated_at: result.rows[0].updated_at
+        });
 
-//     } catch (error) {
-//         console.error("Error fetching user details: ", error);
-//         res.status(error.statusCode || 500).json({
-//             error: error.message || "Internal server error"
-//         });
-//     }
-// });
+    } catch (error) {
+        console.error("Error fetching user details: ", error);
+        res.status(error.statusCode || 500).json({
+            error: error.message || "Internal server error"
+        });
+    }
+});
 
 
 // // put method with validations:
@@ -244,10 +245,6 @@ app.post("/v1/users", async (req, res) => {
 //     });
 // });
 
-// // patch method with validations:
-// // email validation: unique
-// // email validation: keep email format
-// // password validation: length 8 and more, only letters and numbers
 
 // // delete method with validations:
 // // user id validation
