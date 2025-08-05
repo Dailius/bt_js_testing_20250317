@@ -7,10 +7,12 @@
 
 ## 2. JWT (`bcryptjs`, `jsonwebtoken` libs)
 
+https://jwt.io/
+
 Structure: 
 1. header
 2. payload
 3. signature
 
-## 3. API vs. JWT
+
 

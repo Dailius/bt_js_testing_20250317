@@ -170,5 +170,15 @@ end -
 ### [Lecture 30](/notes/lecture_30.md)
 1. Repeat and check homework
 2. JWT (`bcryptjs`, `jsonwebtoken` libs)
-3. API vs. JWT
+
+### [Lecture 31](/notes/lecture_31.md)
+1. Repeat and check homework
+2. API vs. JWT
+3. Unit testing (Jest lib)
+
+
+### [Lecture 32](/notes/lecture_32.md)
+1. Unit testing (Jest lib)
+2. Integration testing (Supertest lib)
+
 
