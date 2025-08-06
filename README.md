@@ -176,9 +176,9 @@ end -
 2. API vs. JWT
 3. Unit testing (Jest lib)
 
-
 ### [Lecture 32](/notes/lecture_32.md)
 1. Unit testing (Jest lib)
-2. Integration testing (Supertest lib)
 
+<!-- ### [Lecture 33](/notes/lecture_33.md)
+1. Integration testing (Supertest lib) -->
 

@@ -1,0 +1,17 @@
+You are provided with the following JavaScript modules:
+
+* math.js
+* stringUtils.js
+* arrayHelpers.js
+* userService.js
+
+Your task is to write unit tests for each module using Jest.
+
+Requirements
+* Create new project and a tests folder.
+* Use math.test.js, stringUtils.test.js, etc., for your test files.
+* Run tests using: npm test
+* Each test file should contain at least 3–5 test cases.
+* Use describe() and test() (or it()) for structure.
+* Use expect().toBe() or expect().toThrow() as appropriate.
+

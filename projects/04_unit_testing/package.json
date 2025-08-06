@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest unit04.js"
   },
   "keywords": [],
   "author": "",
