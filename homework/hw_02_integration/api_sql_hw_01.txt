@@ -1,0 +1,13 @@
+Folder structure:
+
+/todo-app
+  ├── app.js
+  ├── server.js
+  ├── routes/
+  │   └── todos.js
+  └── package.json
+
+Initiate project and set up app
+
+Write integration tests for this app.
+

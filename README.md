@@ -179,6 +179,6 @@ end -
 ### [Lecture 32](/notes/lecture_32.md)
 1. Unit testing (Jest lib)
 
-<!-- ### [Lecture 33](/notes/lecture_33.md)
-1. Integration testing (Supertest lib) -->
+### [Lecture 33](/notes/lecture_33.md)
+1. Integration testing (Supertest lib)
 

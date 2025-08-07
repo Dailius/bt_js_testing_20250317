@@ -28,7 +28,7 @@ Functions to test:
 
 Write test cases to cover:
 - Capitalize lowercase word
-- Capitalize already-capitalized word
+- Capitalize word when all letters are uppercase 
 - Empty string input
 - String that contains a substring
 - Case where substring is not found
