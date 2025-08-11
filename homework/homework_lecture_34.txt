@@ -1,0 +1,9 @@
+You have a todo application in https://todolist.james.am/#/
+
+1. Create new folder (project), setup package.json, install cypress and configure e2e tests.
+2. Update spec.cy.js with the following tests:
+    1. TodoList header is displayed.
+    2. Check 'Double-click to edit a todo' is displayed.
+
+Advanced optional:
+    1. check that input displays "What need's to be done?"

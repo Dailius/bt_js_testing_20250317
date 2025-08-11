@@ -182,3 +182,10 @@ end -
 ### [Lecture 33](/notes/lecture_33.md)
 1. Integration testing (Supertest lib)
 
+
+## Week 10
+### [Lecture 34](/notes/lecture_34.md)
+1. Repeat and check homework
+2. Automation testing
+3. Cypress install
+4. First test with cypress
