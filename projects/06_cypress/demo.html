@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hover-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin: 50px auto;
+            position: relative;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hover-box:hover .hover-button {
+            display: block;
+        }
+
+        .hover-button {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 5px 10px;
+            border: none;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hidden-text {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Demo text</h1>
+    </div>
+    <div>
+        <h1>Demo text</h1>
+    </div>
+    <div>
+        <p class="some-class-a">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="some-class-a some-class-b">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p id="some_id">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <span id="some_id">Some span</span>
+    </div>
+    <div>
+        <p class="mrg">1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="mrg">2 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="mrg">3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="mrg">4 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div data-qa="comb_slc">
+        <p>Pirmas</p>
+        <p>Antras</p>
+        <span>
+            <p>Trecias</p>
+        </span>
+    </div>
+
+    <div data-qa="sib_slc"></div>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+
+    <div id="comb_slc_comb">
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li> 
+        </ul>
+    </div>
+
+    <div>
+        <div class="hover-box">
+            Hover here
+            <button class="hover-button">Click Me</button>
+        </div>
+        
+        <p class="hidden-text">You clicked the button!</p>
+    </div>
+
+    <script>
+        document.querySelector('.hover-button').addEventListener('click', function() {
+            document.querySelector('.hidden-text').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

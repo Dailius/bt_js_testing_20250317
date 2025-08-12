@@ -189,3 +189,9 @@ end -
 2. Automation testing
 3. Cypress install
 4. First test with cypress
+
+### [Lecture 35](/notes/lecture_35.md)
+1. Repeat and check homework
+2. Get vs contains in cypress.
+3. Actions in cypress: type and click.
+4. E2E tests vs integration tests.
