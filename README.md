@@ -1,5 +1,5 @@
 start - 6/11/2025	
-end - 
+end - 09/04/2025
 
 ## Week 01
 ### [Lecture 01](/notes/lecture_01.md)
@@ -195,3 +195,15 @@ end -
 2. Get vs contains in cypress.
 3. Actions in cypress: type and click.
 4. E2E tests vs integration tests.
+
+### [Lecture 36](/notes/lecture_36.md)
+1. Hooks
+2. Combinator selectors
+
+### [Lecture 37](/notes/lecture_37.md)
+1. Repeat and check homework
+2. Readme
+3. xpath selector
+
+
+<!-- ## Week 11 -->
