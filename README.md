@@ -203,7 +203,8 @@ end - 09/04/2025
 ### [Lecture 37](/notes/lecture_37.md)
 1. Repeat and check homework
 2. Readme
-3. xpath selector
+3. TC for system testing
+4. xpath selector
 
 
 <!-- ## Week 11 -->
