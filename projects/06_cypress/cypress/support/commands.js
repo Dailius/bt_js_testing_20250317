@@ -23,3 +23,25 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("clickOnProductsOfNavigationMenu", () => {
+  cy.get('a[href="/products"]').click();
+});
+
+Cypress.Commands.add("addProductToCart", (productId) => {
+  cy.get(`div[class="overlay-content"] a[data-product-id="${productId}"]`)
+    .invoke("show")
+    .click({ force: true });
+});
+
+Cypress.Commands.add("clickOnContinueShopping", () => {
+  cy.get('div[class="modal-content"] button[data-dismiss="modal"]').click();
+});
+
+Cypress.Commands.add("clickOnViewCart", () => {
+  cy.get('div[class="modal-content"] a[href="/view_cart"]').click();
+});
+
+Cypress.Commands.add("getProductPrice", (productId) =>
+  cy.get(`tr[id="product-${productId}"] > td[class="cart_price"]`)
+);
