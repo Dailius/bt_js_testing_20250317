@@ -19,11 +19,13 @@ describe("automationexercise.com automated tests", () => {
 
     cy.get(listOfProductsInCart).should("have.length", 2);
 
-    cy.getProductPrice(1)
-      .should("be.visible")
-      .then(($tag) => {
-        expect($tag.text().trim()).equal("Rs. 500")
-      });
+    // cy.getProductPrice(1)
+    //   .should("be.visible")
+    //   .then(($tag) => {
+    //     expect($tag.text().trim()).equal("Rs. 500")
+    //   });
+
+    cy.getProductPrice(1).should('have.text', 'Rs. 500').should("be.visible");
 
     cy.get('tr[id="product-1"] > td[class="cart_quantity"]')
       .contains("1")
