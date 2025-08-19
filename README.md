@@ -204,8 +204,19 @@ end - 09/04/2025
 1. Repeat and check homework
 
 
-<!-- ## Week 11
+## Week 11
 ### [Lecture 38](/notes/lecture_38.md)
 1. Readme
 2. TC for system testing
-3. xpath selector -->
+   
+### [Lecture 39](/notes/lecture_39.md)
+1. Repeat and check homework
+2. xpath selector
+3. Intro to CI/CD
+4. Virtual machines
+5. Cypress run
+6. Cypress configuration
+
+### [Lecture 40](/notes/lecture_40.md)
+1. Repeat and check homework
+2. Cypress configuration

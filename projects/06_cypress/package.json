@@ -6,7 +6,10 @@
   "scripts": {
     "server": "http-server -p 8086",
     "test": "cypress open",
-    "cy:open": "concurrently -k \"npm run server\" \"wait-on http://localhost:8086/ && npm run test\""
+    "cy:open": "concurrently -k \"npm run server\" \"wait-on http://localhost:8086/ && npm run test\"",
+    "cy:run": "concurrently -k \"npm run server\" \"wait-on http://localhost:8086/ && npx cypress run\"",
+    "cy:runspec": "cypress run -s cypress/e2e/spec.cy.js -b chrome"
+
   },
   "keywords": [],
   "author": "",
