@@ -220,3 +220,9 @@ end - 09/04/2025
 ### [Lecture 40](/notes/lecture_40.md)
 1. Repeat and check homework
 2. Cypress configuration
+
+<!-- ### [Lecture 41](/notes/lecture_41.md)
+1. Single page apps (spa). Website vs web applications.
+2. React
+3. Scripts
+4. Github actions pipelines -->

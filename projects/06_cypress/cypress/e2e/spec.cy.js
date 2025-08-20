@@ -6,7 +6,7 @@ describe('template spec', () => {
   // })
 
   it('Saucedemo login page', ()=>{
-    cy.visit('https://www.saucedemo.com/');
+    cy.visit('/');
 
     cy.contains('Swag Labs');
     // cy.contains('script'); // do not works as looking for text
@@ -17,7 +17,7 @@ describe('template spec', () => {
   });
 
   it('Login with valid data [STANDARD USER]', ()=>{
-    cy.visit('https://www.saucedemo.com/');
+    cy.visit('/');
     // cy.get('input[data-test="username"]').type('standard_user')
     cy.get('#user-name').type('standard_user')
     cy.get('input[data-test="password"]').type('secret_sauce')
@@ -27,7 +27,7 @@ describe('template spec', () => {
   })
 
   it('Login with valid data [PERFORMANCE GLITCH]', ()=>{
-    cy.visit('https://www.saucedemo.com/');
+    cy.visit('/');
     cy.get('input[data-test="username"]').type('performance_glitch_user')
     cy.get('input[data-test="password"]').type('secret_sauce')
     cy.get('input[data-test="login-button"]',{timeout: 1000}).click()
